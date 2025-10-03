@@ -36,7 +36,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
           style={{
-            backgroundImage: 'repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 100px)'
+            backgroundImage: 'repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 100px)'
           }}
         ></div>
         {/* Light Ray Effect - Sweeps on hover */}
@@ -113,7 +113,7 @@ const videoItems = [
     title: "Youtube Video",
     category: "Social Media Strategy",
     image: "https://plus.unsplash.com/premium_photo-1666739389150-45550b371c4a?q=80&w=2203&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Dummy description for Project Alpha: A deep dive into social media analytics and engagement strategies.",
+    description: "Full-scale production of a flagship YouTube video, engineered to boost subscriber growth and channel engagement as a cornerstone of our social media strategy.",
     width: 600,
     height: 800,
   },
@@ -121,7 +121,7 @@ const videoItems = [
     title: "Documentaries",
     category: "Portfolio Management",
     image: "https://images.unsplash.com/photo-1752560934261-951212a89310?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Dummy description for Project Beta: Visualizing financial data and managing investment portfolios.",
+    description: "Crafting a compelling narrative through a feature documentary, showcasing our diverse portfolio and communicating long-term value to stakeholders.",
     width: 800,
     height: 600,
   },
@@ -129,27 +129,26 @@ const videoItems = [
     title: "Short Reels",
     category: "Social Media Campaign",
     image: "https://images.unsplash.com/photo-1759393851741-674ee71fb498?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Dummy description for Project Gamma: The creative process behind a successful marketing campaign.",
+    description: "A series of high-impact, short-form reels designed to capture attention and drive viral engagement for our latest social media campaign.",
     width: 600,
     height: 600,
   },
-   {
+  {
     title: "Mid-level Ads",
     category: "Investment Strategy",
     image: "https://images.unsplash.com/photo-1579677917230-8a938ffc0279?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Dummy description for Project Delta: Analyzing stock market trends to build a robust investment strategy.",
+    description: "Developing targeted video ads that clearly communicate our investment strategy, building trust and generating qualified leads from a specific demographic.",
     width: 800,
     height: 600,
   },
-   {
+  {
     title: "Commercial and advertisement",
     category: "Brand Identity",
     image: "https://images.unsplash.com/photo-1646654184457-cd64cadcd3a3?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    description: "Dummy description for Project Epsilon: From concept to final logo, the journey of creating a brand identity.",
+    description: "From script to screen, this broadcast-quality commercial was created to solidify brand identity and elevate market presence.",
     width: 600,
     height: 800,
   },
-
 ];
    const services = [
     {
