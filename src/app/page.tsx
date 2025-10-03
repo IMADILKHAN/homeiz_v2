@@ -17,6 +17,7 @@ import { SingleSentenceTypingEffect } from '@/components/SingleSentenceTypingEff
 import { GlowingCube } from '@/components/GlowingCube';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { AboutSection } from '@/components/AboutSection';
 
 export default function Home() {
 
@@ -57,57 +58,56 @@ export default function Home() {
         </div>
     </div>
   );
-   const portfolioItems = [
+  const portfolioItems = [
     {
+      tag: "SOCIAL MEDIA",
       title: "Project Alpha",
-      category: "Social Media Strategy",
-      image: "https://picsum.photos/seed/proj1/600/800",
-      dataAiHint: "social media analytics",
+      description: "Social Media Strategy & Analytics",
+      image: "https://framerusercontent.com/images/kHcAMrZsxUQaQIsQJEssJbYVNQ.png",
       width: 600,
       height: 800,
     },
     {
+      tag: "FINANCE",
       title: "Project Beta",
-      category: "Portfolio Management",
-      image: "https://picsum.photos/seed/proj2/800/600",
-      dataAiHint: "financial chart",
+      description: "Data-Driven Portfolio Management",
+      image: "https://framerusercontent.com/images/jWt34RwCKzmMNkR0hXUIM2QE.png",
       width: 800,
       height: 600,
     },
     {
+      tag: "CAMPAIGN",
       title: "Project Gamma",
-      category: "Social Media Campaign",
-      image: "https://picsum.photos/seed/proj3/600/600",
-      dataAiHint: "marketing campaign",
+      description: "Creative Social Media Campaign",
+      image: "https://framerusercontent.com/images/G0Y7utmP1mDBNdb4HsFsz8uac.jpg?scale-down-to=2048",
       width: 600,
       height: 600,
     },
-     {
+    {
+      tag: "INVESTMENT",
       title: "Project Delta",
-      category: "Investment Strategy",
-      image: "https://picsum.photos/seed/proj4/800/600",
-      dataAiHint: "stock market",
+      description: "Market Analysis & Investment Strategy",
+      image: "https://framerusercontent.com/images/rRs2IWwLc5muLuu8n9z5Xpyrg.png",
       width: 800,
       height: 600,
     },
-     {
+    {
+      tag: "BRANDING",
       title: "Project Epsilon",
-      category: "Brand Identity",
-      image: "https://picsum.photos/seed/proj5/600/800",
-      dataAiHint: "logo design",
+      description: "Complete Brand Identity Design",
+      image: "https://framerusercontent.com/images/sncE0CfpHwd6tNvuBHlhMoO1Hs.png",
       width: 600,
       height: 800,
     },
     {
+      tag: "WEB DEV",
       title: "Project Zeta",
-      category: "Web Development",
-      image: "https://picsum.photos/seed/proj6/800/600",
-      dataAiHint: "website code",
+      description: "Full-Stack Web Development",
+      image: "https://framerusercontent.com/images/cMJgawAcxlqkF3mJvxDehL3CYY.png",
       width: 800,
       height: 600,
     },
   ];
-// --- NEW LIST AS REQUESTED ---
 const videoItems = [
   {
     title: "Youtube Video",
@@ -202,19 +202,19 @@ const videoItems = [
             Crafting innovative investment strategies and viral social media campaigns that drive growth and engagement.
           </p>
           <div className="mt-8 flex justify-center gap-4">
-            <Button size="lg" asChild className="shine-effect">
+            <Button size="lg" asChild className="shine-effect rounded-full">
               <Link href="#portfolio">View My Work</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="shine-effect">
+            <Button size="lg" variant="outline" asChild className="shine-effect rounded-full">
               <Link href="#contact">Hire Me Now</Link>
             </Button>
           </div>
         </motion.div>
       </section>
 
-      {/* Kinetic Text Section */}
+    {/* Kinetic Text Section */}
       <section className="w-full py-20 md:py-24">
-        <KineticText />
+        <AboutSection />
       </section>
 
       {/* Clients Worked With */}
@@ -243,30 +243,65 @@ const videoItems = [
         </section>
       </div>
 
-      {/* Portfolio Showcase */}
-      <section id="portfolio" className="w-full py-20 md:py-24">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Portfolio Showcase</h2>
-          <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
-            {portfolioItems.map((item, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-2xl transition-all duration-300 ease-in-out hover:scale-105 break-inside-avoid">
-                 <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={item.width}
-                    height={item.height}
-                    data-ai-hint={item.dataAiHint}
-                    className="w-full h-auto object-cover rounded-2xl"
-                  />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-sm text-primary font-semibold">{item.category}</p>
-                  <h3 className="text-2xl font-bold text-white">{item.title}</h3>
+              {/* Portfolio Showcase */}
+      <section id="portfolio" className="relative w-full py-20 md:py-24 overflow-hidden">
+                {/* Striped Background Overlay - This remains the same */}
+                <div 
+                  className="absolute inset-0 -z-10"
+                  style={{
+                    backgroundImage: 'repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 100px)'
+                  }}
+                />
+
+                <div className="container mx-auto px-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Portfolio Showcase</h2>
+                  
+                  {/* CORRECTED: Changed md- to md: and lg- to lg: */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {portfolioItems.map((item, index) => (
+                      <div 
+                        key={index}
+                        className="group relative bg-gradient-to-r from-neutral-800 to-neutral-900 
+                                  rounded-2xl overflow-hidden
+                                  transition-all duration-300 ease-in-out hover:scale-105"
+                      >
+                        {/* Shine Effect Layer */}
+                        <div 
+                          className="absolute top-0 -left-full h-full w-1/2 z-10
+                                    bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                                    transition-all duration-700 ease-in-out group-hover:left-full"
+                          style={{ transform: 'skewX(-25deg)' }}
+                        ></div>
+                        
+                        {/* Image and Banner Container */}
+                        <div className="relative overflow-hidden z-20">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            width={item.width}
+                            height={item.height}
+                            className="w-full h-auto object-cover aspect-[4/3] 
+                                      transition-transform duration-500 ease-in-out group-hover:scale-110"
+                          />
+                          {/* 'View Project' Banner Overlay */}
+                          <div className="absolute inset-0 bg-black/60 flex items-center justify-center 
+                                        opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <span className="text-white font-bold text-lg tracking-wider">
+                              View Project
+                            </span>
+                          </div>
+                        </div>
+                        
+                        {/* Text Content */}
+                        <div className="relative p-5 z-20">
+                          <h3 className="font-bold text-lg text-white">{item.title}</h3>
+                          <p className="text-sm text-neutral-400 mt-1">{item.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
       
       {/* Deprecated Services Section - Can be removed or repurposed */}
       <section className="w-full py-20 md:py-24 hidden">

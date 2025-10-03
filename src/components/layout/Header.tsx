@@ -22,8 +22,6 @@ const navLinks = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const sectionIds = navLinks.map(link => link.href.split('#')[1]).filter(Boolean);
-  const activeSection = useActiveSection(sectionIds);
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -33,7 +31,7 @@ export default function Header() {
   const headerContainerClass = hasMounted ? "w-3/4 mx-auto" : "container mx-auto px-4";
 
   return (
-    <header className="fixed top-4 inset-x-0 z-50">
+    <header className="fixed top-4 inset-x-0 z-50 pd-5">
       <div className={headerContainerClass}>
         <div className="glass-nav flex items-center justify-between h-14 rounded-full px-4">
           
@@ -49,11 +47,8 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center space-x-2">
             {navLinks.map((link) => {
-              const isActive = hasMounted && (
-                (link.href.startsWith('/#') && pathname === '/' && activeSection === link.href.split('#')[1]) ||
-                (link.href === '/' && pathname === '/' && !activeSection) ||
-                (link.href !== '/' && !link.href.startsWith('/#') && pathname.startsWith(link.href))
-              );
+              // This new logic only checks the page URL, not the scroll position.
+              const isActive = hasMounted && pathname === link.href;
               return (
               <Link
                 key={link.name}

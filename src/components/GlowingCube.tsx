@@ -26,7 +26,7 @@ export function GlowingCube() {
             } else {
                 // Slower ambient rotation
                 ambientY += 0.06;
-                ambientX += 0.036;
+                ambientX += 0.056;
             }
             setRotation({ x: ambientX, y: ambientY });
         }
@@ -62,7 +62,7 @@ export function GlowingCube() {
 
   return (
     <div 
-        className="relative opacity-30 md:opacity-50"
+        className="relative opacity-0 md:opacity-50"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         onMouseDown={handleMouseDown}
