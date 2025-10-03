@@ -41,7 +41,7 @@ export default function Home() {
         ></div>
         {/* Light Ray Effect - Sweeps on hover */}
         <div 
-          className="absolute top-0 -left-full h-full w-1/2 bg-gradient-to-r from-transparent via-white/20 to-transparent transition-all duration-700 ease-in-out group-hover:left-full"
+          className="absolute top-0 -left-full h-full w-2/3 bg-gradient-to-r from-transparent via-white/30 to-transparent transition-all duration-1000 ease-in-out group-hover:left-full"
           style={{ transform: 'skewX(-25deg)' }}
         ></div>
         {/* Content Overlay */}
