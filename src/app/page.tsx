@@ -8,7 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { KineticText } from '@/components/KineticText';
 import { ClientMarquee } from '@/components/ClientMarquee';
-import { ServicesCarousel } from '@/components/ServicesCarousel';
+import { ServicesCarousel, ServicesSection } from '@/components/ServicesCarousel';
 import { TypingEffect } from '@/components/TypingEffect';
 import { ParticleBackground } from '@/components/ParticleBackground';
 import {VideoCard} from '@/components/VideoCard';
@@ -225,23 +225,31 @@ const videoItems = [
         </div>
       </section>
       
-      {/* Our Services Section */}
-      <div className="w-full">
-        <section id="services" className="w-full py-20 md:py-24 relative overflow-hidden">
-          <video
-            src="https://pouch.jumpshare.com/preview/Nzis74wWkukqq7uGX1QTPJc_weAR0prNVpAYui1bNmgAD7w9oqBb-zPYcqGIsdeoi_8lvwuMjEpMlkOX_JmCvlehr8Gf2CF79-jHJ079OmLG4ss5AtfANut7SUxW5FlQv_VnXGB3dXU9gbw_OhEWKm6yjbN-I2pg_cnoHs_AmgI.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-80"
-          />
-          <div className="relative z-10 container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Core Services</h2>
-            <ServicesCarousel />
-          </div>
-        </section>
-      </div>
+
+
+
+
+{/* Our Services Section */}
+<div className="w-full">
+  {/* This section creates the black background and positioning context */}
+  <section id="services" className="w-full py-20 md:py-24 relative bg-black text-white">
+    
+    {/* This div creates the static vertical stripes for the whole section */}
+    <div 
+      className="absolute inset-0 z-0 opacity-30" // Use z-0, not -z-10
+      style={{
+        backgroundImage: 'repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.07) 0px, rgba(255, 255, 255, 0.07) 1px, transparent 1px, transparent 100px)'
+      }}
+    />
+
+    {/* This container holds your content and sits on top of the background */}
+    <div className="relative z-10 container mx-auto px-4">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Core Services</h2>
+      <ServicesSection />
+    </div>
+  </section>
+</div>
+
 
               {/* Portfolio Showcase */}
       <section id="portfolio" className="relative w-full py-20 md:py-24 overflow-hidden">
@@ -303,22 +311,7 @@ const videoItems = [
                 </div>
         </section>
       
-      {/* Deprecated Services Section - Can be removed or repurposed */}
-      <section className="w-full py-20 md:py-24 hidden">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">My Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div key={index} className="text-center p-8 rounded-2xl">
-                <div className="flex justify-center mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+  
 
      {/* Video Showcase */}
      <section id="video-showcase" className="w-full py-20 md:py-24 bg-[#111111]">
