@@ -48,7 +48,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-2">
             {navLinks.map((link) => {
               // This new logic only checks the page URL, not the scroll position.
-              const isActive = hasMounted && pathname === link.href;
+              const isActive = hasMounted && (pathname === link.href || pathname == "#"+link.href ) ;
               return (
               <Link
                 key={link.name}
